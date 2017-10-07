@@ -8,7 +8,7 @@ var images = [];
 var output ;
 var counterPair =0;
  var gameSound = new Howl({
-  urls: ['./audio/sound1.wav']
+  urls: ['https://raw.githubusercontent.com/goldfire/howler.js/master/tests/audio/sound1.mp3']
 })
 var incorrectPairSound = new Howl({
   urls: ['./audio/Wrong-answer-sound-effect.mp3']
