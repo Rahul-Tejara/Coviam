@@ -1,62 +1,58 @@
-
+<!DOCTYPE html>
 <html>
-    <head> 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-         <meta charset="utf-8">
+  <head> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <title>Match Pairs Memory Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content=" memory game">
     <link href="./css/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/howler.min.js"></script>
+    <script type="text/javascript" src="./js/pair.js"></script>
+  </head>
+<body>
+<div class="container">
+  <div class="row" >
+     <div class="col-md-12 col-xs-12">
+     <h1 class="text-center">Match Pairs Memory Game</h1>
+      <div id = "container" >
     
-         <script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="./js/howler.min.js"></script>
-   <script type="text/javascript" src="./js/pair.js"></script>
-   
- 
-
-    </head>
-<body style="background-color: lavenderblush">
-<h1>LOLCatz Memory Game</h1>
+      </div>
+     <div id="info" class="text-center" style="text-transform: uppercase; vertical-align: bottom;">
+     <div> <span style="color:red; font-weight: bold"> TIMER </span>  &nbsp;&nbsp;<label id="minutes">00</label>:<label id="seconds">00</label> </div>
+             <span style="font-weight: bold"> Score </span> &nbsp;<span id="score" style="color: black; font-weight: bold" class="label">0</span>
+              &nbsp;&nbsp;  <span style="font-weight: bold">Level </span> <span style="color: black" id="levelno" class="label">1</span>
+     </div>
+   </div>
+  </div>
+</div>
+<!--pop-up model -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 id="level-msg" class="modal-title">Level 1</h4>
       </div>
       <div class="modal-body">
-        <p id="message">Start game</p>
+        <p id="message" style="font-size:18px; font-weight:bold">You have 60 seconds to match 8 pairs.<br>
+        In Each Level Target Score is 120 </p>
       </div>
       <div class="modal-footer">
-         
-        <button type="button" id="btn-start" onclick="startGame();" class="btn btn-default" data-dismiss="modal">startGame</button>
+        <button type="button" id="btn-start" onclick="startGame();" class="btn btn-default" data-dismiss="modal">Start</button>
       </div>
     </div>
-
   </div>
 </div>
-
-
-<div id = "container"></div>
-<div id="info" style="margin-left: 10px; margin-top: 10px; font-size: 120%; vertical-align: bottom;">
-           <!--Turns <span id="turns" class="label">0</span>&nbsp;&nbsp; -->
-           Score <span id="score" style="color: black" class="label">0</span>
-           &nbsp;&nbsp;Level <span style="color: black" id="levelno" class="label">1</span>
-</div>
-
-<label id="minutes">00</label>:<label id="seconds">00</label>
-
-
 </body>
+
 <script> 
+//  default model
 for (var i = 0; i < 8; i++) { 
   var rand = Math.floor(Math.random() * (18 - 9 + 1) + 9); 
   images.push(imagesArray[rand]);
@@ -75,7 +71,5 @@ for (var i = 0; i < 16; i++) {
 output += "</ol>";
 document.getElementById("container").innerHTML = output;
 $("img").hide();
-
-
 </script>
 </html>
