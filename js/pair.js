@@ -181,12 +181,12 @@ function setTime(){
               document.getElementById("btn-start").innerHTML =  "Next Level";
               $('#myModal').modal('show');
               clearInterval(exit);
-           } if((parseInt(document.getElementById('score').innerHTML)) <= 120 && matchCounter == 8 ){
+           } if((parseInt(document.getElementById('score').innerHTML)) < 120 && matchCounter == 8 ){
               gameSound.stop();
               lossPairSound.play();
               totalScore = 0;
               document.getElementById('level-msg').innerHTML = "PLEASE TRY AGAIN...!!!";
-              document.getElementById('message').innerHTML = "Total score is " + document.getElementById('score').innerHTML + ">=120" ;
+              document.getElementById('message').innerHTML = "Total score is " + document.getElementById('score').innerHTML + ">120" ;
               document.getElementById("btn-start").innerHTML = "RE-START";
               document.getElementById('levelno').innerHTML = '0'; 
               $('#myModal').modal('show');
