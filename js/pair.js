@@ -195,6 +195,7 @@ function setTime(){
             if(totalSeconds == 59){
               gameSound.stop();
               timeOutSound.play();
+              document.getElementById('level-msg').innerHTML = "PLEASE TRY AGAIN...!!!";
               document.getElementById('message').innerHTML = "Level incomplete"
               document.getElementById("btn-start").innerHTML = "Try Again";
               document.getElementById('levelno').innerHTML = '1';
